@@ -1198,7 +1198,7 @@ label {
 .contact-form .btnContact {
   width: 50%;
   border: none;
-  border-radius: 1rem;
+  border-radius: .5rem;
   padding: 1.5%;
   background: #26507B;
   font-weight: 600;
