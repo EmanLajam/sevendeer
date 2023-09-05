@@ -588,6 +588,9 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 @media (max-width: 991px) {
   .about .section-title2 {
    text-align: center;
+   height: 60vh;
+   padding-top: 150px;
+   /* bottom: -50px; */
   }
 }
 .blueFilm{
@@ -603,6 +606,8 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 @media (max-width: 991px) {
   .image-container  {
    display: none;
+   /* padding: 50px; */
+   
   }
 }
 
@@ -727,6 +732,11 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  width: 15%;
 
  position: relative;
+}
+@media (max-width: 992px) {
+  .cta img {
+    width: 80px;
+  }
 }
 
 .cta p {
@@ -1202,7 +1212,7 @@ label {
 
   color: #26507B;
   background-color: #fff;
-  border: 1px solid #0062cc;
+  border: 1px solid #26507B;
 
 }
 .btnContactSubmit
@@ -1211,7 +1221,7 @@ label {
   border-radius: 1rem;
   padding: 1.5%;
   color: #fff;
-  background-color: #0062cc;
+  background-color: #26507B;
   border: none;
   cursor: pointer;
   transition: 0.3s ease-in-out; /* Transition for opacity change */
@@ -1221,7 +1231,7 @@ label {
 .btnContactSubmit:hover
 {
 
-  color: #0062cc;
+  color: #26507B;
   background-color: #fff;
 
 }
@@ -1275,7 +1285,7 @@ label {
    margin-right: 8px;
 }
 .contact .info p a i:hover{
-  color: #0062cc;
+  color: #26507B;
 }
 .contact .info p i{
   font-size: 15px;
