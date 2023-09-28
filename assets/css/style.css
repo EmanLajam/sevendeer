@@ -9,20 +9,25 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #334240;
+  color: #000000;
   margin: 0;
   padding: 0;
 }
 
 a {
   text-decoration: none;
-  color: #1bbca3;
+  /* color: #1bbca3; */
 }
 
 a:hover {
-  color: #2ae0c4;
+  /* color: #2ae0c4; */
   text-decoration: none;
 }
 
@@ -76,13 +81,26 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+/* #header {
   height: 70px;
   z-index: 997;
   transition: all 0.5s;
-  background: #ffffff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  height: 70px;
+  z-index: 999;
+  background-color: transparent;
+} */
+
+#header {
+  height: 70px;
+  z-index: 999; /* Ensure the navbar is above other content */
+  transition: all 0.5s;
+  background-color: transparent; /* Make the background transparent */
+  box-shadow: none; /* Remove the shadow if not needed */
+  position: absolute; /* Position the navbar at the top */
+  left: 0;
+  right: 0;
 }
+
 
 #header .logo h1 {
   font-size: 28px;
@@ -135,7 +153,27 @@ h6 {
   width: 30%;
 }
 
+.hero-container {
+  margin: 0;
+  padding: 0;
+}
 
+.navbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  /* position: relative; */
+}
+
+#mainNav {
+  background-color: transparent;
+  /* position: absolute; */
+  z-index: 998;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active {
+  color: #26507B !important;
+}
 
 .navbar ul {
   margin: 0;
@@ -143,6 +181,7 @@ h6 {
   display: flex;
   list-style: none;
   align-items: center;
+  background-color: transparent !important;
 }
 
 .navbar li {
@@ -319,7 +358,9 @@ h6 {
   background-color: rgba(21, 27, 26, 0.7);
   overflow: hidden;
   padding: 0;
-  
+  position: relative;
+  z-index: 1;
+  top: 0;
 }
 
 #hero .carousel-item {
@@ -327,9 +368,12 @@ h6 {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  
-  
+  background-repeat: no-repeat; 
+}
+#hero .carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire video container */
 }
 @media (max-width: 991px) {
   #hero .carousel-item video{
@@ -347,6 +391,19 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
+}
+
+#hero::before {
+  content: "";
+  background-color: rgba(21, 27, 26, 0.7); /* Add a background color with transparency */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1; /* Place it behind the video */
 }
 
 #hero .carousel-container {
@@ -435,7 +492,7 @@ h6 {
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px 32px;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: 0.5s;
   line-height: 1;
   margin: 30px;
@@ -622,13 +679,8 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .deer{
  width: 100%;
- /* transition: opacity 0.3s ease-in-out; */
-
- 
-}
-.deer:hover {
-  transform: scale(1.2); /* Scale the element on hover */
-
+ /* transition: opacity 0.3s ease-in-out; */ 
+ mask-repeat: repeat-x;
 }
 
 
@@ -733,6 +785,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   transition: all ease-in-out 0.4s;
   background: #fff;
   height: 100%;
+  border-radius: 10px;
 }
 
 .featured-services .service-item .icon {
@@ -824,6 +877,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .more-services .card {
   border: 0;
   text-align: ceneter;
+  /* border-radius: 4px; */
 }
 
 .more-services .card-body {
@@ -1178,27 +1232,36 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .form-control{
   padding: 12px;
   /* border: none; */
-  border-radius: 0%;
+  border-radius: 4px;
   
 
 }
 .form-control:focus{
 border-color: #000000;
 outline: none; /* Remove the default focus outline */
-
-
 }
   
-.contact-form{
+/* .contact-form{
   margin-top: 10%;
   margin-bottom: 5%;
   width: 100%;
+  text-align: center;
+} */
 
-  /* max-width: 1200px; */
-
+.contact-form {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+  max-width: 60%; /* Center the form horizontally */
+  margin: 0 auto; /* Center the form horizontally */
+  /* display: flex;  */
+  align-items: center; /* Center the form vertically */
 }
+
 .container{
   height: auto;
+  align-items: center;
 }
 
 .label {
@@ -1218,8 +1281,6 @@ outline: none; /* Remove the default focus outline */
 }
 label {
   width: 80px; 
-  
- 
 }
 
 .contact-image{
@@ -1241,9 +1302,6 @@ label {
 .contact-form .row{
   margin-bottom: -7%;
   width: 100%;
-
-
-  
 }
 .contact-form h3{
   margin-bottom: 2%;
@@ -1254,7 +1312,7 @@ label {
 .contact-form .btnContact {
   width: 30%;
   border: none;
-  /* border-radius: .5rem; */
+  border-radius: 4px;
   padding: 1.5%;
   /* margin-left: 12%; */
   background: #26507B;
@@ -1310,8 +1368,9 @@ label {
 }
 
 .contact .infos {
-  position: relative;
+  /* position: relative; */
   z-index: 2;
+  text-align: center;
 }
 
 .contact .info {
@@ -1320,6 +1379,7 @@ label {
   color: #334240;
   text-align: center;
   box-shadow: -5px -5px 40px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .contact .info i {
@@ -1339,7 +1399,7 @@ label {
 
 .contact .info p a i{
   font-size: 20px;
-   margin-right: 8px;
+  margin-right: 8px;
 }
 .contact .info p a i:hover{
   color: #26507B;
@@ -1478,16 +1538,36 @@ label {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #000000;
-  padding: 0 0 30px 0;
+  --default-color: #ffffff;
+  --default-color-rgb: 255, 255, 255;
+  --background-color: #000000;
+  --background-color-rgb: 0, 0, 0;
+  background: #fff;
+  /* padding: 0 0 30px 0; */
   color: #fff;
   font-size: 14px;
 }
-
+/* 
 #footer .footer-top {
   background: #3d4f4c;
   border-bottom: 1px solid #4d635f;
   padding: 60px 0 30px 0;
+} */
+
+.footer {
+  --background-color: #f4f4f4;
+  color: #ffffff;
+  font-size: 14px;
+  /* padding-bottom: 30px; */
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+}
+
+.footer .footer-about .logo {
+  line-height: 0;
+  margin-bottom: 25px;
 }
 
 #footer .footer-top .footer-info {
@@ -1507,14 +1587,14 @@ label {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Roboto", sans-serif;
-  color: #fff;
+  /* color: #fff; */
 }
 
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #58716d;
-  color: #fff;
+  /* background: #58716d; */
+  /* color: #fff; */
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1527,16 +1607,21 @@ label {
 
 #footer .footer-top .social-links a:hover {
   background: #26507B;
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  /* color: #fff; */
+  color:#000000;
   position: relative;
   padding-bottom: 12px;
+}
+
+#footer .footer-top p, a {
+  color: #444444;
 }
 
 #footer .footer-top .footer-links {
@@ -1547,11 +1632,13 @@ label {
   list-style: none;
   padding: 0;
   margin: 0;
+  color:#000000;
 }
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #26507B;
+  color:#000000;
+  /* color: #26507B; */
   font-size: 18px;
   line-height: 1;
 }
@@ -1567,7 +1654,7 @@ label {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #fff;
+  /* color: #fff; */
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1613,6 +1700,8 @@ label {
 #footer .copyright {
   text-align: center;
   padding-top: 30px;
+  /* background: #000000; */
+  color: #fff;
   
 }
 
@@ -1620,9 +1709,21 @@ label {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
+  /* background: #000000; */
   color: #fff;
 }
 #footer .credits a{
   
-  color: #dab775;
+  color: #333333;
+}
+#footer .footer-bottom {
+  background-color: #dab775; /* Change to your desired background color */
+  color: #fff;
+  text-align: center;
+  width: 100%; /* Ensures full width */
+  bottom: 0;
+}
+
+.social-links {
+  align-self: flex-start; /* Start from the left */
 }
