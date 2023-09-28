@@ -1185,7 +1185,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .form-control:focus{
 border-color: #000000;
 outline: none; /* Remove the default focus outline */
-
+box-shadow: none;
 
 }
   
@@ -1361,11 +1361,13 @@ label {
   padding: 30px;
 }
 
-.contact .php-email-form {
+.contact .contact-form {
   width: 100%;
+  margin-top: 10%;
+  margin-bottom: 5%;
 }
 
-.contact .php-email-form .error-message {
+.contact .contact-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1374,11 +1376,11 @@ label {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .contact-form .error-message br+br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .contact-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1387,14 +1389,14 @@ label {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.contact .contact-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.contact .contact-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
