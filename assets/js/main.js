@@ -5,7 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -78,22 +78,22 @@
   /**
    * Header fixed top on scroll
    */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    let headerOffset = selectHeader.offsetTop
-    let nextElement = selectHeader.nextElementSibling
-    const headerFixed = () => {
-      if ((headerOffset - window.scrollY) <= 0) {
-        selectHeader.classList.add('fixed-top')
-        nextElement.classList.add('scrolled-offset')
-      } else {
-        selectHeader.classList.remove('fixed-top')
-        nextElement.classList.remove('scrolled-offset')
-      }
-    }
-    window.addEventListener('load', headerFixed)
-    onscroll(document, headerFixed)
-  }
+  // let selectHeader = select('#header')
+  // if (selectHeader) {
+  //   let headerOffset = selectHeader.offsetTop
+  //   let nextElement = selectHeader.nextElementSibling
+  //   const headerFixed = () => {
+  //     if ((headerOffset - window.scrollY) <= 0) {
+  //       selectHeader.classList.add('fixed-top')
+  //       nextElement.classList.add('scrolled-offset')
+  //     } else {
+  //       selectHeader.classList.remove('fixed-top')
+  //       nextElement.classList.remove('scrolled-offset')
+  //     }
+  //   }
+  //   window.addEventListener('load', headerFixed)
+  //   onscroll(document, headerFixed)
+  // }
 
   /**
    * Hero carousel indicators
@@ -103,7 +103,7 @@
 
   heroCarouselItems.forEach((item, index) => {
     (index === 0) ?
-    heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
+      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>" :
       heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
   });
 
@@ -126,7 +126,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -135,7 +135,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -145,7 +145,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -179,7 +179,7 @@
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -201,9 +201,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -248,23 +248,75 @@
 const header = document.getElementById("header");
 const headerHeight = header.offsetHeight;
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
 
   if (scrollPosition > headerHeight) {
-    header.style.backgroundColor = "rgba(255, 255, 255, 0.7)"; // تغيير الشفافية هنا حسب الحاجة
+    // header.style.backgroundColor = "rgba(255, 255, 255, 0.7)"; // تغيير الشفافية هنا حسب الحاجة
   } else {
-    header.style.backgroundColor = "rgba(255, 255, 255, 1)"; // استعادة الشفافية الأصلية عندما يمر المستخدم بالهيدر
+    // header.style.backgroundColor = "rgba(255, 255, 255, 1)"; // استعادة الشفافية الأصلية عندما يمر المستخدم بالهيدر
   }
 });
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
+/**
+ * Animation on scroll
+ */
+window.addEventListener('load', () => {
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  })
+});
+// Navbar shrink function
+window.addEventListener('DOMContentLoaded', (event) => {
+  var navbarShrink = function () {
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    const heroSection = document.body.querySelector('#hero');
+
+    if (!navbarCollapsible || !heroSection) {
+      return;
+    }
+
+    if (window.scrollY === 0 || window.scrollY < heroSection.clientHeight) {
+      navbarCollapsible.classList.remove('navbar-not-transparent');
+    } else {
+      navbarCollapsible.classList.add('navbar-not-transparent');
+    }
+  };
+
+  // Shrink the navbar 
+  navbarShrink();
+
+  // Shrink the navbar when the page is scrolled
+  document.addEventListener('scroll', navbarShrink);
+
+
+  // Activate Bootstrap scrollspy on the main nav element
+  const mainNav = document.body.querySelector('#mainNav');
+  if (mainNav) {
+    new bootstrap.ScrollSpy(document.body, {
+      target: '#mainNav',
+      rootMargin: '0px 0px -40%',
+    });
+  };
+
+  // Collapse responsive navbar when toggler is visible
+  const navbarToggler = document.body.querySelector('.navbar-toggler');
+  const responsiveNavItems = [].slice.call(
+    document.querySelectorAll('#navbarResponsive .nav-link')
+  );
+  responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItem.addEventListener('click', () => {
+      if (window.getComputedStyle(navbarToggler).display !== 'none') {
+        navbarToggler.click();
+      }
+    });
   });
+
+  // Activate SimpleLightbox plugin for portfolio items
+  new SimpleLightbox({
+    elements: '#portfolio a.portfolio-box'
+  });
+
+});
