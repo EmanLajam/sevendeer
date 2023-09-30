@@ -1699,10 +1699,7 @@ label {
 
 #footer .copyright {
   text-align: center;
-  padding-top: 30px;
-  /* background: #000000; */
   color: #fff;
-  
 }
 
 #footer .credits {
@@ -1720,8 +1717,8 @@ label {
   background-color: #dab775; /* Change to your desired background color */
   color: #fff;
   text-align: center;
-  width: 100%; /* Ensures full width */
-  bottom: 0;
+  width: 100%;
+  padding: 10px;
 }
 
 .social-links {
