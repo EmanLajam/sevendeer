@@ -245,16 +245,27 @@
   new PureCounter();
 
 })()
-const header = document.getElementById("header");
-const headerHeight = header.offsetHeight;
+// const header = document.getElementById("header");
+// const headerHeight = header.offsetHeight;
+let heroSection = document.getElementById("hero");
+let isTransparent = true;
 
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
+  const heroHeight = heroSection.offsetHeight;
 
-  if (scrollPosition > headerHeight) {
+  if (scrollPosition > heroHeight) {
+    if (isTransparent) {
+      header.style.backgroundColor = "rgba(255, 255, 255, 1)"; // Set it to opaque
+      isTransparent = false;
+    }
     // header.style.backgroundColor = "rgba(255, 255, 255, 0.7)"; // تغيير الشفافية هنا حسب الحاجة
   } else {
-    header.style.backgroundColor = "rgba(255, 255, 255, 1)"; // استعادة الشفافية الأصلية عندما يمر المستخدم بالهيدر
+    if (!isTransparent) {
+      header.style.backgroundColor = "rgba(255, 255, 255, 0)"; // Set it back to transparent
+      isTransparent = true; // Update the flag
+    }
+    // header.style.backgroundColor = "rgba(255, 255, 255, 1)"; // استعادة الشفافية الأصلية عندما يمر المستخدم بالهيدر
   }
 });
 /**
