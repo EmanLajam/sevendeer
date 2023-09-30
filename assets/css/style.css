@@ -495,7 +495,7 @@ h6 {
   border-radius: 10px;
   transition: 0.5s;
   line-height: 1;
-  margin: 30px;
+  /* margin: 30px; */
   color: #fff;
   animation-delay: 0.8s;
   border: 2px solid #dab775;
