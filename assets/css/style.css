@@ -150,7 +150,8 @@ h6 {
 * Desktop Navigation 
 */
 .sevendeerLogo{
-  width: 30%;
+  width: 20%;
+  height: 5%
 }
 
 .hero-container {
@@ -691,7 +692,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 30px;
   position: relative;
   overflow: hidden;
-  background: #fff;
+  background: #f2f5f4;
   box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -737,7 +738,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .services .icon i {
   font-size: 36px;
   line-height: 1;
-  color: #fff;
+  color: #f2f5f4;
 }
 
 .services .title {
@@ -759,11 +760,11 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 .services .icon-box:hover .title a,
 .services .icon-box:hover .description {
-  color: #fff;
+  color: #f2f5f4;
 }
 
 .services .icon-box:hover .icon {
-  background: #fff;
+  background: #f2f5f4;
 }
 
 .services .icon-box:hover .icon i {
@@ -783,7 +784,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .featured-services .service-item {
   padding: 30px;
   transition: all ease-in-out 0.4s;
-  background: #fff;
+  background: #f2f5f4;
   height: 100%;
   border-radius: 10px;
 }
@@ -1317,7 +1318,7 @@ label {
   /* margin-left: 12%; */
   background: #26507B;
   font-weight: 600;
-  color: #fff;
+  color: #f2f5f4;
   cursor: pointer;
   transition: 0.3s ease-in-out; /* Transition for opacity change */
 
@@ -1326,7 +1327,7 @@ label {
 {
 
   color: #26507B;
-  background-color: #fff;
+  background-color: #f2f5f4;
   border: 1px solid #26507B;
 
 }
@@ -1375,7 +1376,7 @@ label {
 
 .contact .info {
   padding: 60px;
-  background: #fff;
+  background: #f2f5f4;
   color: #334240;
   text-align: center;
   box-shadow: -5px -5px 40px 0 rgba(0, 0, 0, 0.1);
@@ -1415,7 +1416,7 @@ label {
 
 .contact .contact-form-wrap {
   box-shadow: 10px -5px 40px 0 rgba(0, 0, 0, 0.1);
-  background: #fff;
+  background: #f2f5f4;
   position: relative;
   z-index: 1;
   padding: 30px;
@@ -1427,7 +1428,7 @@ label {
 
 .contact .php-email-form .error-message {
   display: none;
-  color: #fff;
+  color: #f2f5f4;
   background: #ed3c0d;
   text-align: left;
   padding: 15px;
@@ -1440,7 +1441,7 @@ label {
 
 .contact .php-email-form .sent-message {
   display: none;
-  color: #fff;
+  color: #f2f5f4;
   background: #18d26e;
   text-align: center;
   padding: 15px;
@@ -1449,7 +1450,7 @@ label {
 
 .contact .php-email-form .loading {
   display: none;
-  background: #fff;
+  background: #f2f5f4;
   text-align: center;
   padding: 15px;
 }
@@ -1493,7 +1494,7 @@ label {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #fff;
+  background: #f2f5f4;
   border: 2px solid #1bbca3;
   padding: 10px 24px;
   color: #1bbca3;
@@ -1502,7 +1503,7 @@ label {
 
 .contact .php-email-form button[type=submit]:hover {
   background: #26507B;
-  color: #fff;
+  color: #f2f5f4;
 }
 
 @media (max-width: 1024px) {
@@ -1568,6 +1569,11 @@ label {
 .footer .footer-about .logo {
   line-height: 0;
   margin-bottom: 25px;
+}
+
+.logo-text{
+  width: 150px;
+  height: 70%;
 }
 
 #footer .footer-top .footer-info {
@@ -1699,7 +1705,9 @@ label {
 
 #footer .copyright {
   text-align: center;
-  color: #fff;
+  /* padding-top: 10px; */
+  /* background: #000000; */
+  color: #fff; 
 }
 
 #footer .credits {
@@ -1714,7 +1722,7 @@ label {
   color: #333333;
 }
 #footer .footer-bottom {
-  background-color: #dab775; /* Change to your desired background color */
+  background-color: #dab775;
   color: #fff;
   text-align: center;
   width: 100%;
