@@ -96,7 +96,7 @@ h6 {
   transition: all 0.5s;
   background-color: transparent; /* Make the background transparent */
   box-shadow: none; /* Remove the shadow if not needed */
-  position: absolute; /* Position the navbar at the top */
+  position: fixed; /* Position the navbar at the top */
   left: 0;
   right: 0;
 }
