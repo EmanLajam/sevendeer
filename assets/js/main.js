@@ -254,7 +254,7 @@ window.addEventListener("scroll", function () {
   if (scrollPosition > headerHeight) {
     // header.style.backgroundColor = "rgba(255, 255, 255, 0.7)"; // تغيير الشفافية هنا حسب الحاجة
   } else {
-    // header.style.backgroundColor = "rgba(255, 255, 255, 1)"; // استعادة الشفافية الأصلية عندما يمر المستخدم بالهيدر
+    header.style.backgroundColor = "rgba(255, 255, 255, 1)"; // استعادة الشفافية الأصلية عندما يمر المستخدم بالهيدر
   }
 });
 /**
