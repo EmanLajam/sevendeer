@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.contact-form');
+  let forms = document.querySelectorAll('.contact-form', '.contact-form2');
 
   forms.forEach( function(e) {
     e.addEventListener('submit', function(event) {
